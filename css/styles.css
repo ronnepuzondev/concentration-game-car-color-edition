@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-color: black;
+  }
+  
+  .gameTitle {
+    max-width: 480px;
+    margin: auto;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 10px;
+    font-family: "Baskervile", sans-serif;
+    color: whitesmoke;
+  }
+  
+  .score {
+    color: white;
+    text-align: center;
+    margin-top: 20px;
+    font-family: "Baskervile", sans-serif;
+  }
+
+  .play {
+    color: red;
+    text-align: center;
+    margin-top: 50px;
+    font-family: "Baskervile", sans-serif;
+  }
+  
+  .container {
+    max-width: 960px;
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+    margin: auto;
+    padding: 20 px;
+  }
+  
+  .image div {
+    height: 170px;
+    border-radius: 100px;
+  }
+  
+  .image {
+    position: relative;
+    cursor: grab ;
+  }
+  
+  .front {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(28, 28, 28);
+    background-color: black;
+  }
+  
+  .back {
+    background-color: grey;
+  }
+  
+  img {
+    height: 100%;
+    width: 100%;
+  }
