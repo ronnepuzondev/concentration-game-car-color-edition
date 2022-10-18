@@ -4,6 +4,11 @@ const images = document.querySelectorAll(".front");
 const scoreTracker = document.querySelector(".score");
 const btn = document.querySelector("#playButton");
 const pictures = document.querySelectorAll(".one");
+const picturesTwo = document.querySelectorAll(".two");
+const picturesThree = document.querySelectorAll(".three");
+const picturesFour = document.querySelectorAll(".four");
+const picturesFive = document.querySelectorAll(".five");
+const picturesSix = document.querySelectorAll(".six");
 
 // if you want to use array of images somewhere down the line
 console.log(Array.from(images)[0]);
@@ -35,6 +40,7 @@ function handleClick() {
         remove.push(clickedImage);
         console.log(clickedImage);
         console.log(remove);
+        playerScore += 1
       } else {
         if (selectedImages.length === 3) {
           console.log("wrong");
@@ -50,9 +56,45 @@ function handleClick() {
         pictures.forEach(function (picture) {
           picture.style.display = "none";
         });
+        console.log("testing remove 1");
+        remove = [0];
+      }
+      if (remove[1] == "two") {
+        picturesTwo.forEach(function (picture) {
+          picture.style.display = "none";
+        });
         console.log("testing remove 2");
         remove = [0];
       }
+      if (remove[1] == "three") {
+        picturesThree.forEach(function (picture) {
+          picture.style.display = "none";
+        });
+        console.log("testing remove 2");
+        remove = [0];
+      }
+      if (remove[1] == "four") {
+        picturesFour.forEach(function (picture) {
+          picture.style.display = "none";
+        });
+        console.log("testing remove 2");
+        remove = [0];
+      }
+      if (remove[1] == "five") {
+        picturesFive.forEach(function (picture) {
+          picture.style.display = "none";
+        });
+        console.log("testing remove 2");
+        remove = [0];
+      }
+      if (remove[1] == "six") {
+        picturesSix.forEach(function (picture) {
+          picture.style.display = "none";
+        });
+        console.log("testing remove 2");
+        remove = [0];
+      }
+
     });
   });
 }
