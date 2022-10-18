@@ -1,7 +1,6 @@
  /*----- constants -----*/
 
-const images = document.querySelectorAll(".front")
-
+ const images = document.querySelectorAll(".front")
 
 // images.addEventListener("click", function() {
 //     let data = parseInt(front.dataset.index)
@@ -11,9 +10,10 @@ const images = document.querySelectorAll(".front")
 
   /*----- state variables -----*/
 
-let isFirstCardClicked = -1
-let firstCard
-let selectedImages = [0]
+  let selectedImages = [0]
+  let playerScore = []
+
+
 
   /*----- cached elements  -----*/
 // const onClick = function (event) {
@@ -24,42 +24,41 @@ let selectedImages = [0]
 
   /*----- event listeners -----*/
 
-// images.forEach(function(image) {
-//     image.addEventListener("click", onClick)
-// })
 
-const eventListener =  images.forEach(function(image) {
+
+// need help with "else" condition
+ 
+  images.forEach(function(image) {
     image.addEventListener("click", function() {
-        isFirstCardClicked *= -1
         let data = parseInt(image.dataset.index)
         selectedImages.push(data)
         console.log(selectedImages)
-        console.log(isFirstCardClicked)
         if (selectedImages[1] === selectedImages[2]) {
             console.log('winner!');
-            selectedImages = []
+            selectedImages = [0]
             console.log(selectedImages)
+            playerScore.push(1)
+            console.log(playerScore)
         } else {
-            selectedImages = []
+          if (selectedImages.length === 3) {
+            console.log('wrong')
+            selectedImages = [0]
+          }
         }
         })
-})
-
-// function eventListenerAdd() {
-//     images.forEach(function(image){
-//         image.addEventListener("click", function(){
-//             if (selectedImages[1] === selectedImages[2]) {
-//                 console.log('winner!');
-//                 selectedImages = []
-//                 console.log(selectedImages)
-//             } else {
-//                 selectedImages = []
-//         }
-//     })
-// })
-// }
+        })
 
 
 
-    
+
+// find a way to flip the images - transform / translate
+
+// when all the images are matched correctly function  - iterate all images and see if theres a specific class
+
+
+// 
+
     /*----- functions -----*/
+
+  
+
