@@ -1,6 +1,7 @@
 /*----- constants -----*/
 
 const images = document.querySelectorAll(".front");
+const scoreTracker = document.querySelector(".score")
 
 
 // images.addEventListener("click", function() {
@@ -23,28 +24,33 @@ let playerScore = 0;
 /*----- event listeners -----*/
 
 // need help with "else" condition
+handleClick()
 
-images.forEach(function (image) {
-  image.addEventListener("click", function () {
-    let data = parseInt(image.dataset.index);
-    selectedImages.push(data);
-    console.log(selectedImages);
-    if (selectedImages[1] === selectedImages[2]) {
-      console.log("winner!");
-      selectedImages = [0];
+function handleClick () {
+  images.forEach(function (image) {
+    image.addEventListener("click", function () {
+      let data = parseInt(image.dataset.index);
+      selectedImages.push(data);
       console.log(selectedImages);
-      playerScore += 1;
-    } else {
-      if (selectedImages.length === 3) {
-        console.log("wrong");
+      if (selectedImages[1] === selectedImages[2]) {
+        console.log("winner!");
         selectedImages = [0];
+        console.log(selectedImages);
+        playerScore += 1;
+      } else {
+        if (selectedImages.length === 3) {
+          console.log("wrong");
+          selectedImages = [0];
+        }
       }
-    }
-    if (playerScore === 6) {
-      console.log("YOU WIN");
-    }
+      if (playerScore === 6) {
+        console.log("YOU WIN");
+        scoreTracker.innerText = "Test"
+      }
+    });
   });
-});
+}
+
 
 // find a way to flip the images - transform / translate
 
