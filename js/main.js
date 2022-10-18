@@ -41,6 +41,9 @@ function handleClick() {
         console.log(clickedImage);
         console.log(remove);
         playerScore += 1
+
+        removePairs()
+
       } else {
         if (selectedImages.length === 3) {
           console.log("wrong");
@@ -51,52 +54,57 @@ function handleClick() {
         console.log("YOU WIN");
         scoreTracker.innerText = "Test";
       }
-      // to remove images of what has matched thus far
-      if (remove[1] == "one") {
-        pictures.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 1");
-        remove = [0];
-      }
-      if (remove[1] == "two") {
-        picturesTwo.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 2");
-        remove = [0];
-      }
-      if (remove[1] == "three") {
-        picturesThree.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 2");
-        remove = [0];
-      }
-      if (remove[1] == "four") {
-        picturesFour.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 2");
-        remove = [0];
-      }
-      if (remove[1] == "five") {
-        picturesFive.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 2");
-        remove = [0];
-      }
-      if (remove[1] == "six") {
-        picturesSix.forEach(function (picture) {
-          picture.style.display = "none";
-        });
-        console.log("testing remove 2");
-        remove = [0];
-      }
+     
+
 
     });
   });
+}
+
+ // to remove images of what has matched thus far
+function removePairs () {
+  if (remove[1] == "one") {
+    pictures.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 1");
+    remove = [0];
+  }
+  if (remove[1] == "two") {
+    picturesTwo.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 2");
+    remove = [0];
+  }
+  if (remove[1] == "three") {
+    picturesThree.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 2");
+    remove = [0];
+  }
+  if (remove[1] == "four") {
+    picturesFour.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 2");
+    remove = [0];
+  }
+  if (remove[1] == "five") {
+    picturesFive.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 2");
+    remove = [0];
+  }
+  if (remove[1] == "six") {
+    picturesSix.forEach(function (picture) {
+      picture.style.display = "none";
+    });
+    console.log("testing remove 2");
+    remove = [0];
+  }
 }
 
 // btn.addEventListener("click", function () {
