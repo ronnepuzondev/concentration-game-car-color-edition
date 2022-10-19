@@ -8,7 +8,7 @@ const picturesThree = document.querySelectorAll(".three");
 const picturesFour = document.querySelectorAll(".four");
 const picturesFive = document.querySelectorAll(".five");
 const picturesSix = document.querySelectorAll(".six");
-const hideImages = document.querySelectorAll(".front img");
+const hiddenImages = document.querySelectorAll(".front img");
 
 // if you want to use array of images somewhere down the line
 console.log(Array.from(images)[0]);
@@ -28,7 +28,7 @@ let scoreTracker = document.querySelector(".score");
 handleClick();
 
 function handleClick() {
-  images.forEach(function (image) {
+  hiddenImages.forEach(function (image) {
     image.addEventListener("click", function () {
       let data = parseInt(image.dataset.index);
       selectedImages.push(data);
@@ -45,7 +45,7 @@ function handleClick() {
         console.log(remove);
         playerScore += 1;
 
-        removePairs();
+        showPairs();
       } else {
         if (selectedImages.length === 3) {
           console.log("wrong");
@@ -63,8 +63,8 @@ function handleClick() {
 
 /*----- functions -----*/
 
-// to remove images of what has matched thus far
-function removePairs() {
+// to show images of what has matched thus far
+function showPairs() {
   if (remove[1] == "one") {
     pictures.forEach(function (picture) {
       picture.style.opacity = "100";
@@ -111,7 +111,7 @@ function removePairs() {
 
 // to reset game board
 function resetGame() {
-  hideImages.forEach(function (image) {
+  hiddenImages.forEach(function (image) {
     image.style.opacity = "0";
     playerScore = 0;
     remove = [0];
