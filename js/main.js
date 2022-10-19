@@ -1,7 +1,6 @@
 /*----- constants -----*/
 
 const images = document.querySelectorAll(".front");
-let scoreTracker = document.querySelector(".score");
 const btn = document.querySelector("#playButton");
 const pictures = document.querySelectorAll(".one");
 const picturesTwo = document.querySelectorAll(".two");
@@ -19,12 +18,13 @@ console.log(Array.from(images)[0]);
 let selectedImages = [0];
 let playerScore = 0;
 let remove = [0];
+let flip = []
+let scoreTracker = document.querySelector(".score");
 
 /*----- cached elements  -----*/
 
 /*----- event listeners -----*/
 
-// need help with "else" condition
 handleClick();
 
 function handleClick() {
@@ -33,6 +33,8 @@ function handleClick() {
       let data = parseInt(image.dataset.index);
       selectedImages.push(data);
       console.log(selectedImages);
+
+
       if (selectedImages[1] === selectedImages[2]) {
         console.log("winner!");
         selectedImages = [0];
@@ -57,6 +59,9 @@ function handleClick() {
     });
   });
 }
+
+
+/*----- functions -----*/
 
 // to remove images of what has matched thus far
 function removePairs() {
@@ -104,6 +109,7 @@ function removePairs() {
   }
 }
 
+// to reset game board
 function resetGame() {
   hideImages.forEach(function (image) {
     image.style.opacity = "0";
@@ -112,39 +118,3 @@ function resetGame() {
     scoreTracker.innerText = "Make a Move!"
   });
 }
-
-// btn.addEventListener("click", function () {
-//   images.forEach(function (image) {
-//     if (image.style.display === "flex") {
-//       image.style.display = "none"
-//     }
-//   })
-// })
-
-// function hide () {
-//   images.forEach(function (image) {
-//     if (image.style.display === "flex") {
-//       image.style.display = "none"
-//     }
-//   })
-// }
-
-// function toggle() {
-//   let x = document.getElementById("testhide");
-//   x.style.color = "red"
-//   console.log('test')
-
-// }
-
-// function toggle() {
-//   let fark = document.getElementsByClassName("front")
-//   fark.style.color = "red"
-// }
-
-// find a way to flip the images - transform / translate
-
-// when all the images are matched correctly function  - iterate all images and see if theres a specific class
-
-//
-
-/*----- functions -----*/
