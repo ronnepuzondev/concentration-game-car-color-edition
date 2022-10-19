@@ -1,7 +1,7 @@
 /*----- constants -----*/
 
 const images = document.querySelectorAll(".front");
-const scoreTracker = document.querySelector(".score");
+let scoreTracker = document.querySelector(".score");
 const btn = document.querySelector("#playButton");
 const pictures = document.querySelectorAll(".one");
 const picturesTwo = document.querySelectorAll(".two");
@@ -9,6 +9,7 @@ const picturesThree = document.querySelectorAll(".three");
 const picturesFour = document.querySelectorAll(".four");
 const picturesFive = document.querySelectorAll(".five");
 const picturesSix = document.querySelectorAll(".six");
+const hideImages = document.querySelectorAll(".front img");
 
 // if you want to use array of images somewhere down the line
 console.log(Array.from(images)[0]);
@@ -40,10 +41,9 @@ function handleClick() {
         remove.push(clickedImage);
         console.log(clickedImage);
         console.log(remove);
-        playerScore += 1
+        playerScore += 1;
 
-        removePairs()
-
+        removePairs();
       } else {
         if (selectedImages.length === 3) {
           console.log("wrong");
@@ -52,59 +52,65 @@ function handleClick() {
       }
       if (playerScore === 6) {
         console.log("YOU WIN");
-        scoreTracker.innerText = "Test";
-      }
-     
-
-
+        scoreTracker.innerText = "YOU WIN";
+      } 
     });
   });
 }
 
- // to remove images of what has matched thus far
-function removePairs () {
+// to remove images of what has matched thus far
+function removePairs() {
   if (remove[1] == "one") {
     pictures.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 1");
     remove = [0];
   }
   if (remove[1] == "two") {
     picturesTwo.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 2");
     remove = [0];
   }
   if (remove[1] == "three") {
     picturesThree.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 2");
     remove = [0];
   }
   if (remove[1] == "four") {
     picturesFour.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 2");
     remove = [0];
   }
   if (remove[1] == "five") {
     picturesFive.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 2");
     remove = [0];
   }
   if (remove[1] == "six") {
     picturesSix.forEach(function (picture) {
-      picture.style.display = "none";
+      picture.style.opacity = "100";
     });
     console.log("testing remove 2");
     remove = [0];
   }
+}
+
+function resetGame() {
+  hideImages.forEach(function (image) {
+    image.style.opacity = "0";
+    playerScore = 0;
+    remove = [0];
+    scoreTracker.innerText = "Make a Move!"
+  });
 }
 
 // btn.addEventListener("click", function () {

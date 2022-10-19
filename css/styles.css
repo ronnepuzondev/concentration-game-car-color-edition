@@ -24,7 +24,6 @@
     text-align: center;
     margin-top: 20px;
     font-family: "Baskervile", sans-serif;
-    visibility: visible;
   }
 
   #playButton {
@@ -54,13 +53,9 @@
     cursor: grab ;
 
   }
-  
-.front.two {
-  display: none;
-}
 
   .front {
-    display: flex;
+    /* display: flex; */
     position: absolute;
     height: 100%;
     width: 100%;
@@ -68,7 +63,6 @@
     align-items: center;
     border: 2px solid rgb(28, 28, 28);
     background-color: black;
-    visibility: visible;
   }
   
   .back {
@@ -76,16 +70,13 @@
   }
   
   img {
-    display: flex;
+    display: grid;
     height: 100%;
     width: 100%;
+    opacity: 0;
   }
 
   .testhide {
     color: white;
     display: flex;
-  }
-
-  img.one {
-    display: 
   }
