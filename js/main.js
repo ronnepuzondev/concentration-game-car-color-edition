@@ -33,6 +33,12 @@ function handleClick() {
       let data = parseInt(image.dataset.index);
       selectedImages.push(data);
       console.log(selectedImages);
+      image.style.opacity = "1"
+
+      function hideTheImage () {
+        image.style.opacity = "0"
+      } setTimeout(hideTheImage, 1000)
+
 
 
       if (selectedImages[1] === selectedImages[2]) {
@@ -44,18 +50,22 @@ function handleClick() {
         console.log(clickedImage);
         console.log(remove);
         playerScore += 1;
-
         showPairs();
+
       } else {
         if (selectedImages.length === 3) {
           console.log("wrong");
           selectedImages = [0];
+
+          
         }
       }
       if (playerScore === 6) {
         console.log("YOU WIN");
         scoreTracker.innerText = "YOU WIN";
       } 
+      
+
     });
   });
 }
@@ -70,7 +80,7 @@ function showPairs() {
       picture.style.opacity = "100";
     });
     console.log("testing remove 1");
-    remove = [0];
+    // remove = [0];
   }
   if (remove[1] == "two") {
     picturesTwo.forEach(function (picture) {
@@ -84,7 +94,7 @@ function showPairs() {
       picture.style.opacity = "100";
     });
     console.log("testing remove 2");
-    remove = [0];
+    // remove = [0];
   }
   if (remove[1] == "four") {
     picturesFour.forEach(function (picture) {
@@ -107,7 +117,7 @@ function showPairs() {
     console.log("testing remove 2");
     remove = [0];
   }
-}
+} setTimeout(showPairs, 3000)
 
 // to reset game board
 function resetGame() {
