@@ -1,82 +1,79 @@
 * {
-    margin: 0;
-    box-sizing: border-box;
-  }
+  margin: 0;
+  box-sizing: border-box;
+}
 
-  body {
-    background-color: black;
-  }
-  
-  .gameTitle {
-    max-width: 480px;
-    margin: auto;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 10px;
-    font-family: "Baskervile", sans-serif;
-    color: whitesmoke;
-  }
-  
-  .score {
-    color: white;
-    text-align: center;
-    margin-top: 20px;
-    font-family: "Baskervile", sans-serif;
-  }
+body {
+  background-color: black;
+}
 
-  #playButton {
-    margin: auto;
-    display: flex;
-    margin-top: 50px;
-    font-family: "Baskervile", sans-serif;
-  }
-  
-  .container {
-    max-width: 960px;
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    gap: 1rem;
-    margin: auto;
-    padding: 20 px;
-  }
-  
-  .image div {
-    height: 170px;
-    border-radius: 100px;
-    
-  }
-  
-  .image {
-    position: relative;
-    cursor: grab ;
+.gameTitle {
+  max-width: 480px;
+  margin: auto;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 10px;
+  font-family: "Baskervile", sans-serif;
+  color: whitesmoke;
+}
 
-  }
+.score {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Baskervile", sans-serif;
+}
 
-  .front {
-    /* display: flex; */
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    border: 2px solid rgb(28, 28, 28);
-    background-color: black;
-  }
-  
-  .back {
-    background-color: grey;
-  }
-  
-  img {
-    display: grid;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-  }
+#playButton {
+  margin: auto;
+  display: flex;
+  margin-top: 50px;
+  font-family: "Baskervile", sans-serif;
+}
 
-  .testhide {
-    color: white;
-    display: flex;
-  }
+.container {
+  max-width: 960px;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 1rem;
+  margin: auto;
+  padding: 20 px;
+}
+
+.image div {
+  height: 170px;
+  border-radius: 1px;
+}
+
+.image {
+  position: relative;
+  cursor: grab;
+}
+
+.front {
+  /* display: flex; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  border: 10px solid rgb(28, 28, 28);
+}
+
+/* .back {
+    background-image: url("images/bluecar-1.jpeg")
+  } */
+
+img {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+}
+
+.testhide {
+  color: white;
+  display: flex;
+}
