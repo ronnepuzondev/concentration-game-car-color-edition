@@ -62,18 +62,11 @@ body {
   border: 10px solid rgb(28, 28, 28);
 }
 
-/* .back {
-    background-image: url("images/bluecar-1.jpeg")
-  } */
+
 
 img {
   display: grid;
   height: 100%;
   width: 100%;
   opacity: 0;
-}
-
-.testhide {
-  color: white;
-  display: flex;
 }

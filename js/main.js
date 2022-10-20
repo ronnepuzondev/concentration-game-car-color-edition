@@ -9,6 +9,7 @@ const picturesFour = document.querySelectorAll(".four");
 const picturesFive = document.querySelectorAll(".five");
 const picturesSix = document.querySelectorAll(".six");
 const hiddenImages = document.querySelectorAll(".front img");
+const shuffleImages = document.querySelectorAll(".image");
 
 // if you want to use array of images somewhere down the line
 console.log(Array.from(images)[0]);
@@ -40,7 +41,7 @@ function handleClick() {
       checkWinner();
     });
   });
-}
+} 
 
 /*----- functions -----*/
 
@@ -53,23 +54,20 @@ function checkWinner() {
     console.log(clickedImage);
     console.log(remove);
     playerScore += 1;
-    // function clearSelectedImages() {
+
     selectedImages = [0];
-    //   console.log("im clearing after 10 seconds");
+
     hideAllTheImages = [];
-    // }
-    // setTimeout(clearSelectedImages, 4000);
 
     // showPairs();
   } else {
     if (selectedImages.length === 3) {
-      // selectedImage is an array of the dataset index of the img in html file
       function hideTheImage() {
         hideAllTheImages[0].style.opacity = "0";
         hideAllTheImages[1].style.opacity = "0";
         console.log("hide all the images", hideAllTheImages);
       }
-      setTimeout(hideTheImage, 5000);
+      setTimeout(hideTheImage, 1000);
 
       console.log("not the same image!");
       function clearSelectedImages() {
@@ -77,86 +75,35 @@ function checkWinner() {
         console.log("im clearing after 10 seconds");
         hideAllTheImages = [];
       }
-      setTimeout(clearSelectedImages, 6000);
+      setTimeout(clearSelectedImages, 2000);
     }
   }
-  // function clearSelectedImages() {
-  //   selectedImages = [0];
-  //   console.log("im clearing after 10 seconds");
-  //   hideAllTheImages = [];
-  // }
-  // setTimeout(clearSelectedImages, 6000);
+
   if (playerScore === 6) {
     console.log("YOU WIN");
     scoreTracker.innerText = "YOU WIN";
     selectedImages = [0];
-    showAllImages();
-    function showAllImages() {
-      hiddenImages.forEach(function (image) {
-        image.style.opacity = "1";
-      });
-    }
-    setTimeout(showAllImages, 2000);
-    // hiddenImages.forEach(function(image) {
-    // image.style.opacity = "1"
-    // })
-    // setTimeout(image, 5000)
+
+
   }
 }
 
-// showPairs()
-// to show images of what has matched thus far
-// function showPairs() {
-//   if (remove[1] == "one") {
-//     pictures.forEach(function (picture) {
-//       picture.style.opacity = "0";
-//     });
-//     console.log("testing remove 1");
-//     remove = [0];
-//   }
-//   if (remove[1] == "two") {
-//     picturesTwo.forEach(function (picture) {
-//       picture.style.opacity = "100";
-//     });
-//     console.log("testing remove 2");
-//     remove = [0];
-//   }
-//   if (remove[1] == "three") {
-//     picturesThree.forEach(function (picture) {
-//       picture.style.opacity = "100";
-//     });
-//     console.log("testing remove 2");
-//     remove = [0];
-//   }
-//   if (remove[1] == "four") {
-//     picturesFour.forEach(function (picture) {
-//       picture.style.opacity = "100";
-//     });
-//     console.log("testing remove 2");
-//     remove = [0];
-//   }
-//   if (remove[1] == "five") {
-//     picturesFive.forEach(function (picture) {
-//       picture.style.opacity = "100";
-//     });
-//     console.log("testing remove 2");
-//     remove = [0];
-//   }
-//   if (remove[1] == "six") {
-//     picturesSix.forEach(function (picture) {
-//       picture.style.opacity = "100";
-//     });
-//     console.log("testing remove 2");
-//     remove = [0];
-//   }
-// }
 
-// to reset game board
-function resetGame() {
+// to reset game board and call shuffle function
+function restartGame() {
   hiddenImages.forEach(function (image) {
     image.style.opacity = "0";
     playerScore = 0;
     remove = [];
     scoreTracker.innerText = "Make a Move!";
+    shuffle()
   });
+}
+
+// shuffle function
+function shuffle() {
+shuffleImages.forEach(function(card) {
+  let randomPos = Math.floor(Math.random() * 12);
+  card.style.order = randomPos;
+})
 }
