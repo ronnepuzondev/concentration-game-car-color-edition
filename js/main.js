@@ -2,26 +2,15 @@
 
 const images = document.querySelectorAll(".front");
 const btn = document.querySelector("#playButton");
-const pictures = document.querySelectorAll(".one");
-const picturesTwo = document.querySelectorAll(".two");
-const picturesThree = document.querySelectorAll(".three");
-const picturesFour = document.querySelectorAll(".four");
-const picturesFive = document.querySelectorAll(".five");
-const picturesSix = document.querySelectorAll(".six");
 const hiddenImages = document.querySelectorAll(".front img");
 const shuffleImages = document.querySelectorAll(".image");
 const howManyClicks = document.querySelector(".clicks span")
-
-// if you want to use array of images somewhere down the line
-console.log(Array.from(images)[0]);
+const scoreTracker = document.querySelector(".score");
 
 /*----- state variables -----*/
 
 let selectedImages = [0];
 let playerScore = 0;
-let remove = [0];
-let flip = [];
-let scoreTracker = document.querySelector(".score");
 let hideAllTheImages = [];
 let clickCounter = 0
 
@@ -30,7 +19,6 @@ let clickCounter = 0
 /*----- event listeners -----*/
 
 restartGame();
-
 handleClick();
 
 function handleClick() {
@@ -38,11 +26,9 @@ function handleClick() {
     image.addEventListener("click", function () {
       clickCounter += 1
       howManyClicks.innerText = clickCounter
-      console.log(image);
       hideAllTheImages.push(image);
       let data = parseInt(image.dataset.index);
       selectedImages.push(data);
-      console.log(selectedImages);
       image.style.opacity = "1";
       checkWinner();
     });
@@ -54,34 +40,25 @@ function handleClick() {
 function checkWinner() {
   if (selectedImages[1] === selectedImages[2]) {
     console.log("winner!");
-    console.log(selectedImages);
-    let clickedImage = event.target.className;
-    remove.push(clickedImage);
-    console.log(clickedImage);
-    console.log(remove);
-    playerScore += 1;
-
     selectedImages = [0];
-
     hideAllTheImages = [];
-
-    // showPairs();
+    playerScore += 1;
   } else {
     if (selectedImages.length === 3) {
       function hideTheImage() {
         hideAllTheImages[0].style.opacity = "0";
         hideAllTheImages[1].style.opacity = "0";
-        console.log("hide all the images", hideAllTheImages);
       }
       setTimeout(hideTheImage, 1000);
 
       console.log("not the same image!");
       function clearSelectedImages() {
         selectedImages = [0];
-        console.log("im clearing after 10 seconds");
         hideAllTheImages = [];
       }
-      setTimeout(clearSelectedImages, 2000);
+      //test from 1500 to 1100
+      setTimeout(clearSelectedImages, 1100);
+
     }
   }
 
@@ -89,8 +66,6 @@ function checkWinner() {
     console.log("YOU WIN");
     scoreTracker.innerText = "YOU WIN";
     selectedImages = [0];
-
-
   }
 }
 
@@ -103,7 +78,7 @@ function restartGame() {
     remove = [];
     clickCounter = 0
     howManyClicks.innerText = 0;
-    // scoreTracker.innerText = "Click a tile to reveal a car color";
+    scoreTracker.innerText = "Click a tile to reveal a car, remember the color and try to make your next tile click match the previous car color!"
     shuffle()
   })
 }
