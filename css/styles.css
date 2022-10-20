@@ -29,7 +29,8 @@ body {
   color: white;
   text-align: center;
   margin-top: 20px;
-  font-family: "Baskervile", sans-serif;
+  font-family: 'Racing Sans One'; sans-serif;
+  font-size: larger;
 }
 
 .clicks {
@@ -53,8 +54,6 @@ body {
   gap: 1rem;
   margin: auto;
   padding: 20 px;
-
-  
 }
 
 .image div {
@@ -68,7 +67,6 @@ body {
 }
 
 .front {
-  /* display: flex; */
   position: absolute;
   height: 100%;
   width: 100%;
@@ -78,7 +76,8 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
   opacity: .8;
-  background-image: url("images/raceflag.png")
+  background-image: url("images/raceflag.png");
+  pointer-events: ;
 }
 
 img {
