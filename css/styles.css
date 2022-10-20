@@ -3,20 +3,25 @@
   box-sizing: border-box;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
 body {
   background-color: black;
   pointer-events: ;
 }
 
 .gameTitle {
-  max-width: 480px;
+  /* max-width: 480px; */
   margin: auto;
   height: 100px;
+  width: fit-content;
   display: flex;
+  align-content: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 10px;
-  font-family: "Baskervile", sans-serif;
+  /* margin-top: 10px; */
+  font-family: 'Racing Sans One';
+  font-size: x-large;
   color: whitesmoke;
 }
 
@@ -41,13 +46,15 @@ body {
   font-family: "Baskervile", sans-serif;
 }
 
-.container {
+#container {
   max-width: 960px;
   display: grid;
   grid-template-columns: repeat(4, auto);
   gap: 1rem;
   margin: auto;
   padding: 20 px;
+
+  
 }
 
 .image div {
@@ -68,9 +75,10 @@ body {
   justify-content: center;
   align-items: center;
   border: 10px solid rgb(28, 28, 28);
+  background-repeat: no-repeat;
+  background-size:cover;
+  opacity: .8;
 }
-
-
 
 img {
   display: grid;

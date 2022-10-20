@@ -6,6 +6,7 @@ const hiddenImages = document.querySelectorAll(".front img");
 const shuffleImages = document.querySelectorAll(".image");
 const howManyClicks = document.querySelector(".clicks span")
 const scoreTracker = document.querySelector(".score");
+const winningFlag = document.querySelectorAll(".front")
 
 /*----- state variables -----*/
 
@@ -64,8 +65,16 @@ function checkWinner() {
 
   if (playerScore === 6) {
     console.log("YOU WIN");
-    scoreTracker.innerText = "YOU WIN";
+    scoreTracker.innerText = "Winner Winner Chicken Dinner!";
     selectedImages = [0];
+    document.getElementById("container").style.backgroundImage = "url('css/images/fireworks.gif')"
+    hiddenImages.forEach(function(image) {
+      image.style.opacity = "0"
+    })
+    winningFlag.forEach(function(flag) {
+      flag.style.backgroundImage = "url('css/images/finishline.gif')"
+    })
+    
   }
 }
 
@@ -78,8 +87,12 @@ function restartGame() {
     remove = [];
     clickCounter = 0
     howManyClicks.innerText = 0;
+    document.getElementById("container").style.backgroundImage = ""
     scoreTracker.innerText = "Click a tile to reveal a car, remember the color and try to make your next tile click match the previous car color!"
     shuffle()
+  })
+  winningFlag.forEach(function(flag) {
+    flag.style.backgroundImage = ""
   })
 }
 
