@@ -7,6 +7,20 @@
     <title>Concentration - Car Color Edition</title>
     <link rel="stylesheet" href="css/styles.css" />
     <script defer src="js/main.js"></script>
+    <script>
+      $(window).load(function () {
+        $("#selector").masonry({
+          itemSelector: ".item",
+          columnWidth: 200,
+          isAnimated: true,
+          animationOptions: {
+            duration: 700,
+            easing: "linear",
+            queue: false,
+          },
+        });
+      });
+    </script>
   </head>
   <body>
     <div class="gameTitle">
