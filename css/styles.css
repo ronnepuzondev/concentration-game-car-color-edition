@@ -78,6 +78,7 @@ body {
   background-repeat: no-repeat;
   background-size:cover;
   opacity: .8;
+  background-image: url("images/raceflag.png")
 }
 
 img {

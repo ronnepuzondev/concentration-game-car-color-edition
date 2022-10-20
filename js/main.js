@@ -88,11 +88,11 @@ function restartGame() {
     clickCounter = 0
     howManyClicks.innerText = 0;
     document.getElementById("container").style.backgroundImage = ""
-    scoreTracker.innerText = "Click a tile to reveal a car, remember the color and try to make your next tile click match the previous car color!"
+    scoreTracker.innerText = "Click a race flag to reveal a car, remember its color and try to make your next race flag click match the previous car's color!"
     shuffle()
   })
   winningFlag.forEach(function(flag) {
-    flag.style.backgroundImage = ""
+    flag.style.backgroundImage = "url('css/images/raceflag.png')"
   })
 }
 
