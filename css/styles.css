@@ -5,6 +5,7 @@
 
 body {
   background-color: black;
+  pointer-events: ;
 }
 
 .gameTitle {
@@ -26,10 +27,17 @@ body {
   font-family: "Baskervile", sans-serif;
 }
 
+.clicks {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+  font-family: "Baskervile", sans-serif;
+}
+
 #playButton {
   margin: auto;
   display: flex;
-  margin-top: 50px;
+  margin-top: 20px;
   font-family: "Baskervile", sans-serif;
 }
 

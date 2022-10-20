@@ -10,6 +10,7 @@ const picturesFive = document.querySelectorAll(".five");
 const picturesSix = document.querySelectorAll(".six");
 const hiddenImages = document.querySelectorAll(".front img");
 const shuffleImages = document.querySelectorAll(".image");
+const howManyClicks = document.querySelector(".clicks span")
 
 // if you want to use array of images somewhere down the line
 console.log(Array.from(images)[0]);
@@ -22,16 +23,21 @@ let remove = [0];
 let flip = [];
 let scoreTracker = document.querySelector(".score");
 let hideAllTheImages = [];
+let clickCounter = 0
 
 /*----- cached elements  -----*/
 
 /*----- event listeners -----*/
+
+restartGame();
 
 handleClick();
 
 function handleClick() {
   hiddenImages.forEach(function (image) {
     image.addEventListener("click", function () {
+      clickCounter += 1
+      howManyClicks.innerText = clickCounter
       console.log(image);
       hideAllTheImages.push(image);
       let data = parseInt(image.dataset.index);
@@ -95,9 +101,11 @@ function restartGame() {
     image.style.opacity = "0";
     playerScore = 0;
     remove = [];
-    scoreTracker.innerText = "Make a Move!";
+    clickCounter = 0
+    howManyClicks.innerText = 0;
+    // scoreTracker.innerText = "Click a tile to reveal a car color";
     shuffle()
-  });
+  })
 }
 
 // shuffle function
