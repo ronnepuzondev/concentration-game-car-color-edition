@@ -76,6 +76,7 @@ function checkWinner() {
     });
     images.forEach(function (flag) {
       flag.style.backgroundImage = "url('css/images/finishline.gif')";
+      flag.style.pointerEvents = "";
     });
   }
 }
