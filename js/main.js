@@ -1,5 +1,5 @@
 /*----- constants -----*/
-
+const raceCardSound = new Audio("css/sounds/racecarsound.wav");
 /*----- state variables -----*/
 
 let playerScore = 0;
@@ -52,6 +52,7 @@ function checkWinner() {
     hideAllTheImages = [];
     playerScore += 1;
   } else {
+    // to handle images that do not match
     if (selectedImages.length === 2) {
       function hideTheImage() {
         hideAllTheImages[0].style.opacity = "0";
@@ -66,14 +67,15 @@ function checkWinner() {
       setTimeout(clearSelectedImages, 900);
     }
   }
+  // to handle all image pairs matching (game complete)
   if (playerScore === 6) {
     message.innerText =
       "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
     selectedImages = [];
     document.getElementById("container").style.backgroundImage =
       "url('css/images/hqraceflag.gif')";
-      message.style.fontSize = "x-large"
-      message.style.color = "red"
+    message.style.fontSize = "x-large";
+    message.style.color = "red";
     hiddenImages.forEach(function (image) {
       image.style.opacity = "0";
     });
@@ -81,6 +83,7 @@ function checkWinner() {
       flag.style.opacity = "0";
       flag.style.pointerEvents = "none";
     });
+    raceCardSound.play();
   }
 }
 // to reset game board and call shuffle function
@@ -98,7 +101,7 @@ function restartGame() {
   });
   images.forEach(function (flag) {
     flag.style.backgroundImage = "url('css/images/raceflag.png')";
-    flag.style.opacity = "1"
+    flag.style.opacity = "1";
     flag.style.pointerEvents = "";
   });
   shuffle();

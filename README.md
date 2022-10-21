@@ -31,4 +31,4 @@ Link to the game: <https://ronnepuzondev.github.io/concentration-game-car-color-
 Future Enhancements will include:<br>
 - Hard Mode (less than 30 clicks)
 - Mobile browser compatibility
-- Sounds
+- Add more sounds
