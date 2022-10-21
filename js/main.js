@@ -71,12 +71,14 @@ function checkWinner() {
       "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
     selectedImages = [];
     document.getElementById("container").style.backgroundImage =
-      "url('css/images/fireworks.gif')";
+      "url('css/images/hqraceflag.gif')";
+      scoreTracker.style.fontSize = "x-large"
+      scoreTracker.style.color = "red"
     hiddenImages.forEach(function (image) {
       image.style.opacity = "0";
     });
     images.forEach(function (flag) {
-      flag.style.backgroundImage = "url('css/images/finishline.gif')";
+      flag.style.opacity = "0";
       flag.style.pointerEvents = "";
     });
   }
@@ -96,6 +98,7 @@ function restartGame() {
   });
   images.forEach(function (flag) {
     flag.style.backgroundImage = "url('css/images/raceflag.png')";
+    flag.style.opacity = "1"
     flag.style.pointerEvents = "";
   });
   shuffle();
