@@ -89,7 +89,7 @@ function restartGame() {
     howManyClicks.innerText = 0;
     document.getElementById("container").style.backgroundImage = "";
     scoreTracker.innerText =
-      "Click a race flag to reveal a car, remember its color and try to make your next race flag click match the previous car's color in under 30 CLICKS!";
+      "Click a race flag to reveal a car, remember its color and try to make your next race flag click match the previous car's color in 30 or less CLICKS!";
     scoreTracker.style.color = "white";
   });
   images.forEach(function (flag) {

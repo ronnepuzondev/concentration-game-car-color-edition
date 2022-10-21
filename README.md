@@ -1,33 +1,34 @@
-# Concentration Game - Car Color Edition
+# **Concentration Game - Car Color Edition**
 
-### My game choice for project 1 will be a Concentration game, which will use pictures of cars with specific colors. 
+### ***My game choice for Project 1 is a Concentration/Memory type game, which will use images of pairs of cars that have the same color!***
+&nbsp;
+## **Game Rules:**
+1. There are a total of 12 cars with 6 pairs of the same color
+2. On page load these 12 cars will be hidden and replaced with pictures of race flags
+3. After a player clicks their first race flag, a car will appear and persist until the next race flag is clicked which will show another car.
+4. If the second race flag that is clicked reveals a car that doesn't match the previously clicked car's color, then both cars will be hidden once again
+4. The goal is for the player to consecutively click on race flags that reveals two of the same colors of cars under 30 clicks!
+&nbsp;
+## **Game Pictures:**
 
-## Wireframe 
+<img src="images/GameScreen.jpg" alt="drawing" width="500"/>
+<img src="images/WinningScreenshot.jpg" alt="drawing" width="500"/>
+<img src="images/AlmostDone.jpg" alt="drawing" width="500"/>
+<img src="images/GameOverScreen.jpg" alt="drawing" width="500"/>
 
-<img src="images/wireframe-concentrationgame.jpg" alt="drawing" width="500"/>
-
-
-## PsuedoCode
-```
-function showImages() {
--show the images on the gameboard
-}
-
-
-function hideImages() {
--hide the images on the gameboard
-}
-
-
-function renderBoard() {
--show the car images for 2 seconds, and then call hideImages function
-}
-
-
-function initialize() {
--Reset player score to 0 and then call renderboard function
-}
-
-function checkForPairs() {
--Check whether the two images that were consecutively clicked by the user/player matches, which will result in a winning condition 
-}
+&nbsp;
+## **Technologies Used:**
+- HTML
+- CSS
+- Vanilla Javascript
+&nbsp;
+## **Getting Started:**
+&nbsp;
+Link to the game: <https://ronnepuzondev.github.io/concentration-game-car-color-edition/>
+&nbsp;
+## **Next Steps:**
+&nbsp;
+Future Enhancements will include:<br>
+- Hard Mode (less than 30 clicks)
+- Mobile browser compatibility
+- Sounds
