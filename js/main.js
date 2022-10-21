@@ -4,7 +4,7 @@
 
 let playerScore = 0;
 let clickCounter = 0;
-let selectedImages = [0];
+let selectedImages = [];
 let hideAllTheImages = [];
 
 /*----- cached elements  -----*/
@@ -47,12 +47,12 @@ function handleClick() {
 
 // to check for win or lose conditions
 function checkWinner() {
-  if (selectedImages[1] === selectedImages[2]) {
-    selectedImages = [0];
+  if (selectedImages[0] === selectedImages[1]) {
+    selectedImages = [];
     hideAllTheImages = [];
     playerScore += 1;
   } else {
-    if (selectedImages.length === 3) {
+    if (selectedImages.length === 2) {
       function hideTheImage() {
         hideAllTheImages[0].style.opacity = "0";
         hideAllTheImages[1].style.opacity = "0";
@@ -60,15 +60,16 @@ function checkWinner() {
       setTimeout(hideTheImage, 800);
 
       function clearSelectedImages() {
-        selectedImages = [0];
+        selectedImages = [];
         hideAllTheImages = [];
       }
       setTimeout(clearSelectedImages, 900);
     }
   }
   if (playerScore === 6) {
-    scoreTracker.innerText = "Winner Winner Chicken Dinner!";
-    selectedImages = [0];
+    scoreTracker.innerText =
+      "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
+    selectedImages = [];
     document.getElementById("container").style.backgroundImage =
       "url('css/images/fireworks.gif')";
     hiddenImages.forEach(function (image) {
