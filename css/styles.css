@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap');
 
 body {
   background-color: black;
@@ -11,25 +11,23 @@ body {
 }
 
 .gameTitle {
-  /* max-width: 480px; */
   margin: auto;
   height: 100px;
   width: fit-content;
   display: flex;
-  align-content: center;
   justify-content: center;
   flex-direction: column;
-  /* margin-top: 10px; */
-  font-family: 'Racing Sans One';
+  font-family: 'Roboto', sans-serif;
   font-size: x-large;
+  font-style: italic;
   color: whitesmoke;
 }
 
-.score {
+.userMessage {
   color: white;
   text-align: center;
   margin-top: 20px;
-  font-family: 'Racing Sans One'; sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size:larger;
 }
 
@@ -37,14 +35,15 @@ body {
   color: white;
   text-align: center;
   margin-top: 20px;
-  font-family: "Baskervile", sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 #playButton {
   margin: auto;
   display: flex;
   margin-top: 20px;
-  font-family: "Baskervile", sans-serif;
+  font-family: 'Roboto', sans-serif;
+  color: red;
 }
 
 #container {

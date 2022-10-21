@@ -15,7 +15,7 @@ const hiddenImages = document.querySelectorAll(".front img");
 const shuffleImages = document.querySelectorAll(".image");
 const howManyClicks = document.querySelector(".clicks span");
 const gameOver = document.querySelector(".clicks");
-const scoreTracker = document.querySelector(".score");
+const message = document.querySelector(".userMessage");
 
 /*----- event listeners -----*/
 
@@ -32,8 +32,8 @@ function handleClick() {
       selectedImages.push(data);
       image.style.opacity = "1";
       if (clickCounter === 30) {
-        scoreTracker.innerText = ".....GAME OVER.....";
-        scoreTracker.style.color = "red";
+        message.innerText = ".....GAME OVER.....";
+        message.style.color = "red";
         images.forEach(function (image) {
           image.style.pointerEvents = "none";
         });
@@ -67,19 +67,19 @@ function checkWinner() {
     }
   }
   if (playerScore === 6) {
-    scoreTracker.innerText =
+    message.innerText =
       "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
     selectedImages = [];
     document.getElementById("container").style.backgroundImage =
       "url('css/images/hqraceflag.gif')";
-      scoreTracker.style.fontSize = "x-large"
-      scoreTracker.style.color = "red"
+      message.style.fontSize = "x-large"
+      message.style.color = "red"
     hiddenImages.forEach(function (image) {
       image.style.opacity = "0";
     });
     images.forEach(function (flag) {
       flag.style.opacity = "0";
-      flag.style.pointerEvents = "";
+      flag.style.pointerEvents = "none";
     });
   }
 }
@@ -92,9 +92,9 @@ function restartGame() {
     clickCounter = 0;
     howManyClicks.innerText = 0;
     document.getElementById("container").style.backgroundImage = "";
-    scoreTracker.innerText =
+    message.innerText =
       "Click a race flag to reveal a car, remember its color and try to make your next race flag click match the previous car's color in 30 or less CLICKS!";
-    scoreTracker.style.color = "white";
+    message.style.color = "white";
   });
   images.forEach(function (flag) {
     flag.style.backgroundImage = "url('css/images/raceflag.png')";
