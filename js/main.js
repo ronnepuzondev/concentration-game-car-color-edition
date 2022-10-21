@@ -31,7 +31,7 @@ function handleClick() {
       let data = parseInt(image.dataset.index);
       selectedImages.push(data);
       image.style.opacity = "1";
-      if (clickCounter === 30) {
+      if (clickCounter === 31) {
         message.innerText = ".....GAME OVER.....";
         message.style.color = "red";
         images.forEach(function (image) {
