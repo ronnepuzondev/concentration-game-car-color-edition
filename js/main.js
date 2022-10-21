@@ -91,7 +91,6 @@ function restartGame() {
   hiddenImages.forEach(function (image) {
     image.style.opacity = "0";
     playerScore = 0;
-    remove = [];
     clickCounter = 0;
     howManyClicks.innerText = 0;
     document.getElementById("container").style.backgroundImage = "";
