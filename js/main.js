@@ -23,8 +23,12 @@ shuffle();
 handleClick();
 
 function handleClick() {
+  let canClick = true;
   hiddenImages.forEach(function (image) {
     image.addEventListener("click", function () {
+      if (!canClick) {
+        return;
+      }
       clickCounter += 1;
       howManyClicks.innerText = clickCounter;
       hideAllTheImages.push(image);
@@ -39,11 +43,22 @@ function handleClick() {
         });
       }
       checkWinner();
+      canClick = false;
+      setTimeout(() => canClick = true, 1500);
     });
   });
 }
 
+
 /*----- functions -----*/
+
+function hideTheImage() {
+  hideAllTheImages.forEach(function (image) {
+    image.style.opacity = "0";
+  });
+  selectedImages = [];
+  hideAllTheImages = [];
+}
 
 // to check for win or lose conditions
 function checkWinner() {
@@ -54,12 +69,6 @@ function checkWinner() {
   } else {
     // to handle images that do not match
     if (selectedImages.length === 2) {
-      function hideTheImage() {
-        hideAllTheImages[0].style.opacity = "0";
-        hideAllTheImages[1].style.opacity = "0";
-        selectedImages = [];
-        hideAllTheImages = [];
-      }
       setTimeout(hideTheImage, 800);
     }
   }
