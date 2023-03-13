@@ -44,7 +44,7 @@ function handleClick() {
       }
       checkWinner();
       canClick = false;
-      setTimeout(() => canClick = true, 1500);
+      setTimeout(() => canClick = true, 700);
     });
   });
 }
@@ -74,21 +74,23 @@ function checkWinner() {
   }
   // to handle all image pairs matching (game complete)
   if (playerScore === 6) {
-    message.innerText =
-      "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
-    selectedImages = [];
-    document.getElementById("container").style.backgroundImage =
-      "url('css/images/hqraceflag.gif')";
-    message.style.fontSize = "x-large";
-    message.style.color = "red";
-    hiddenImages.forEach(function (image) {
-      image.style.opacity = "0";
-    });
-    images.forEach(function (flag) {
-      flag.style.opacity = "0";
-      flag.style.pointerEvents = "none";
-    });
-    raceCardSound.play();
+    setTimeout(function() {
+      message.innerText =
+        "WE'VE GOT OURSELVES A WINNER! KEEP PLAYING TO EXERCISE YOUR MEMORY MUSCLE..";
+      selectedImages = [];
+      document.getElementById("container").style.backgroundImage =
+        "url('css/images/hqraceflag.gif')";
+      message.style.fontSize = "x-large";
+      message.style.color = "red";
+      hiddenImages.forEach(function (image) {
+        image.style.opacity = "0";
+      });
+      images.forEach(function (flag) {
+        flag.style.opacity = "0";
+        flag.style.pointerEvents = "none";
+      });
+      raceCardSound.play();
+    }, 700);
   }
 }
 
