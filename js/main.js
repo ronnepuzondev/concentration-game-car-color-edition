@@ -57,14 +57,10 @@ function checkWinner() {
       function hideTheImage() {
         hideAllTheImages[0].style.opacity = "0";
         hideAllTheImages[1].style.opacity = "0";
-      }
-      setTimeout(hideTheImage, 800);
-
-      function clearSelectedImages() {
         selectedImages = [];
         hideAllTheImages = [];
       }
-      setTimeout(clearSelectedImages, 900);
+      setTimeout(hideTheImage, 800);
     }
   }
   // to handle all image pairs matching (game complete)
@@ -86,6 +82,7 @@ function checkWinner() {
     raceCardSound.play();
   }
 }
+
 // to reset game board and call shuffle function
 function restartGame() {
   hiddenImages.forEach(function (image) {
@@ -95,7 +92,7 @@ function restartGame() {
     howManyClicks.innerText = 0;
     document.getElementById("container").style.backgroundImage = "";
     message.innerText =
-      "Click a race flag to reveal a car, remember its color and try to make your next race flag click match the previous car's color in 30 or less CLICKS!";
+      "Click a race flag to reveal a car, and try to make your next race flag click match the previous car's color in 30 or less CLICKS!";
     message.style.color = "white";
   });
   images.forEach(function (flag) {
